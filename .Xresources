@@ -1,0 +1,42 @@
+!
+!         mmm  mmm
+!          ##mm##
+!           ####     ##m####   m####m   mm#####m
+!            ##      ##"      ##mmmm##  ##mmmm "
+!           ####     ##       ##""""""   """"##m
+!  ##      ##  ##    ##       "##mmmm#  #mmmmm##"
+!  ""     """  """   ""         """""    """""""
+
+! Fonts
+Xft.dpi: 96
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! URxvt
+URxvt.perl-ext-common: default,matcher
+URxvt.scrollBar: false
+URxvt.font: xft:scientifica:pixelsize=11
+URxvt.cursorUnderline: true
+URxvt.internalBorder: 10
+URxvt.letterSpace: 1
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+
+! rofi
+rofi.font: scientifica Regular 8
+rofi.terminal: urxvt
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+
+! Clickable URLs
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+
+! Use Control-Shift-V/C for X clipboard
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
