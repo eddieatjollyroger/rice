@@ -1,0 +1,10 @@
+#!/usr/bin/python
+import requests
+
+r= requests.get("http://api.wunderground.com/api/d0504b212b9495e7/conditions/q/CA/San_Francisco.json")
+
+info = r.json()
+weather = info["current_observation"]["weather"]
+temp = info["current_observation"]["temp_c"]
+
+print(weather, str(temp) + "°C")
