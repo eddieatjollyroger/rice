@@ -27,6 +27,7 @@ top = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+border-top-color = ${colors.background}
 
 line-size = 2
 line-color = #f00
@@ -36,8 +37,10 @@ overline-color = #f00
 underline-size = 2
 underline-color = ${colors.foreground}
 
-padding-left = 0
-padding-right = 2
+padding-left = 3
+padding-right = 3
+border-bottom-size = 0
+border-top-size = 10
 
 module-margin-left = 0
 module-margin-right = 2
@@ -48,11 +51,13 @@ font-2 = fontawesome:pixelsize=10;2
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = cpu volume powermenu
+modules-right = cmus cpu volume powermenu
 
-tray-position = right
-tray-background = ${colors.background}
-tray-transparent = true
+#tray-position = right
+#tray-background = ${colors.background}
+#tray-transparent = true
+#tray-detached = true
+#tray-offset-x = -4
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -68,6 +73,7 @@ scroll-down = i3wm-wsprev
 [module/xwindow]
 type = internal/xwindow
 label = %title%
+label-background = ${colors.highlight}
 label-foreground = ${colors.foreground}
 format-underline = ${colors.highlight}
 
@@ -108,8 +114,10 @@ format = <label-state> <label-mode>
 ;   %mode%
 ; Default: %mode%
 label-mode = %mode%
-;label-mode-padding = 2
-label-mode-background = ${colors.background}
+label-mode-padding = 2
+label-mode-margin = 1
+label-mode-background = ${colors.highlight}
+label-mode-foreground = ${colors.background}
 
 ; Available tokens:
 ;   %name%
@@ -118,8 +126,8 @@ label-mode-background = ${colors.background}
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = 
-;label-focused-foreground = ${colors.highlight}
-;label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.highlight}
 label-focused-underline = ${colors.highlight}
 label-focused-padding = 2
 
@@ -256,13 +264,17 @@ Additional formatting
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = <ramp-coreload> <label>
+#format = <ramp-coreload> <label>
+format = <label>
+
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
 label = %percentage%% CPU
+label-foreground = ${colors.background}
+label-background = ${colors.highlight}
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -274,60 +286,65 @@ ramp-coreload-6 = ▇
 ramp-coreload-7 = █
 
 format-underline = ${colors.highlight}
-[module/volume]
-type = internal/volume
-
-format-volume = <bar-volume> <label-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = ""
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-format-volume-underline = ${colors.highlight}
-bar-volume-width = 10
-bar-volume-foreground-0 = ${xrdb:color10}
-bar-volume-foreground-1 = ${xrdb:color10}
-bar-volume-foreground-2 = ${xrdb:color10}
-bar-volume-foreground-3 = ${xrdb:color10}
-bar-volume-foreground-4 = ${xrdb:color10}
-bar-volume-foreground-5 = ${xrdb:color11}
-bar-volume-foreground-6 = ${xrdb:color1}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
 
 #[module/volume]
 #type = internal/volume
 #
-#
-#format-volume = <bar-volume> <label-volume> <ramp-volume>
-#label-volume = %percentage% VOL
-#
+#format-volume = <bar-volume> <label-volume>
+#label-volume = VOL
+#label-volume-foreground = ${root.foreground}
+#label-volume-foreground = ${colors.background}
+#label-volume-background = ${colors.highlight}
+#format-muted-prefix = ""
+#format-muted-foreground = ${colors.foreground-alt}
+#label-muted = sound muted
+#format-volume-underline = ${colors.highlight}
 #bar-volume-width = 10
-#bar-volume-foreground = #aaff77
-#bar-volume-indicator = ▓
-#bar-volume-indicator-font = 6
-#bar-volume-fill = ▒
-#bar-volume-fill-font = 6
-#bar-volume-fill-font-style = bold
-#bar-volume-empty = ░
-#bar-volume-empty-font = 6
-#
-#
-#format-muted = <label-muted>
-#label-muted =   muted   ░░░░░░░░░░
-#label-muted-foreground = #66
+#bar-volume-foreground-0 = ${xrdb:color10}
+#bar-volume-foreground-1 = ${xrdb:color10}
+#bar-volume-foreground-2 = ${xrdb:color10}
+#bar-volume-foreground-3 = ${xrdb:color10}
+#bar-volume-foreground-4 = ${xrdb:color10}
+#bar-volume-foreground-5 = ${xrdb:color11}
+#bar-volume-foreground-6 = ${xrdb:color1}
+#bar-volume-gradient = false
+#bar-volume-indicator = |
+#bar-volume-indicator-font = 2
+#bar-volume-fill = ─
+#bar-volume-fill-font = 2
+#bar-volume-empty = ─
+#bar-volume-empty-font = 2
+#bar-volume-empty-foreground = ${colors.foreground-alt}
 
-#ramp-volume-0 =
-#ramp-volume-1 =
-#ramp-volume-2 =
+
+[module/volume]
+type = internal/volume
+
+
+#format-volume = <bar-volume> <label-volume> <ramp-volume>
+format-volume = <label-volume> <ramp-volume>
+label-volume = %percentage%% VOL
+label-volume-background = ${colors.highlight}
+label-volume-foreground = ${colors.background}
+
+bar-volume-width = 10
+bar-volume-foreground = #aaff77
+bar-volume-indicator = ▓
+bar-volume-indicator-font = 6
+bar-volume-fill = ▒
+bar-volume-fill-font = 6
+bar-volume-fill-font-style = bold
+bar-volume-empty = ░
+bar-volume-empty-font = 6
+
+
+format-muted = <label-muted>
+label-muted =   muted   ░░░░░░░░░░
+label-muted-foreground = #66
+
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
 
 
 [module/date]
@@ -338,9 +355,13 @@ date = "%A %d %B"
 
 time = %H:%M:%S
 
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.highlight}
+#format-prefix-foreground = ${colors.foreground}
+#format-underline = ${colors.highlight}
 label = %date% %time%
+label-padding = 2
+label-margin = 1
+label-foreground = ${colors.background}
+label-background = ${colors.highlight}
 
 #[module/date]
 #type = internal/date
@@ -361,12 +382,15 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open =OFF
+label-open = POWER
 label-open-foreground = ${colors.foreground}
+label-open-background = ${colors.highlight}
 label-close =  cancel
 label-close-foreground = ${colors.foreground-alt}
+label-close-background = ${colors.highlight}
 label-separator = |
 label-separator-foreground = ${colors.foreground}
+label-separator-background = ${colors.highlight}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -383,9 +407,21 @@ menu-2-0-exec = systemctl poweroff; mode "default"
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 format-underline = ${colors.highlight}
+
 [settings]
 screenchange-reload = true
 
+[module/cmus]
+type = custom/script
+
+format-underline = ${colors.highlight}
+label-foreground = ${colors.background}
+label-background = ${colors.highlight}
+exec = bash ~/.config/polybar/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote -u
 
 [global/wm]
 margin-top = 5
