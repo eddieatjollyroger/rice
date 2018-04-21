@@ -12,9 +12,20 @@
 
 
 background = #383c4FF
-background-alt = #383c4FF
+background-alt = ${xrdb:color15:#222}
 foreground = ${xrdb:color15:#222}
-foreground-alt = ${xrdb:color2:#555}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+third = ${xrdb:color3:#222}
+fourth = ${xrdb:color5:#222}
+fifth = ${xrdb:color6:#222}
+sixth = ${xrdb:color7:#222}
+seventh = ${xrdb:color8:#222}
+eight = ${xrdb:color9:#222}
+nine = ${xrdb:color10:#222}
+ten = ${xrdb:color11:#222}
+eleven = ${xrdb:color12:#222}
 highlight = ${xrdb:color4:#f00}
 urgent = #f00
 
@@ -35,7 +46,7 @@ line-color = #f00
 overline-size = 2
 overline-color = #f00
 underline-size = 2
-underline-color = ${colors.foreground}
+#underline-color = ${colors.foreground-alt}
 
 padding-left = 3
 padding-right = 3
@@ -53,11 +64,11 @@ modules-left = i3 xwindow
 modules-center = date
 modules-right = cmus cpu volume powermenu
 
-#tray-position = right
-#tray-background = ${colors.background}
+tray-position = right
+tray-background = ${colors.fourth}
 #tray-transparent = true
 #tray-detached = true
-#tray-offset-x = -4
+tray-offset-x = -4
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -73,9 +84,9 @@ scroll-down = i3wm-wsprev
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-background = ${colors.highlight}
+label-background = ${colors.third}
 label-foreground = ${colors.foreground}
-format-underline = ${colors.highlight}
+#format-underline = ${colors.highlight}
 
 [module/i3]
 type = internal/i3
@@ -128,7 +139,7 @@ label-mode-foreground = ${colors.background}
 label-focused = 
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.highlight}
-label-focused-underline = ${colors.highlight}
+#label-focused-underline = ${colors.highlight}
 label-focused-padding = 2
 
 ; Available tokens:
@@ -138,6 +149,7 @@ label-focused-padding = 2
 ; Default: %icon%  %name%
 label-unfocused = 
 label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -272,9 +284,9 @@ format = <label>
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = %percentage%% CPU
+label = CPU %percentage%%
 label-foreground = ${colors.background}
-label-background = ${colors.highlight}
+label-background = ${colors.nine}
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -285,7 +297,7 @@ ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
 
-format-underline = ${colors.highlight}
+#format-underline = ${colors.highlight}
 
 #[module/volume]
 #type = internal/volume
@@ -323,8 +335,8 @@ type = internal/volume
 
 #format-volume = <bar-volume> <label-volume> <ramp-volume>
 format-volume = <label-volume> <ramp-volume>
-label-volume = %percentage%% VOL
-label-volume-background = ${colors.highlight}
+label-volume = VOL %percentage%%
+label-volume-background = ${colors.seventh}
 label-volume-foreground = ${colors.background}
 
 bar-volume-width = 10
@@ -361,7 +373,7 @@ label = %date% %time%
 label-padding = 2
 label-margin = 1
 label-foreground = ${colors.background}
-label-background = ${colors.highlight}
+label-background = ${colors.primary}
 
 #[module/date]
 #type = internal/date
@@ -384,7 +396,7 @@ format-spacing = 1
 
 label-open = POWER
 label-open-foreground = ${colors.foreground}
-label-open-background = ${colors.highlight}
+label-open-background = ${colors.eight}
 label-close =  cancel
 label-close-foreground = ${colors.foreground-alt}
 label-close-background = ${colors.highlight}
@@ -406,7 +418,8 @@ menu-2-0 = power off
 menu-2-0-exec = systemctl poweroff; mode "default"
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-format-underline = ${colors.highlight}
+
+#format-underline = ${colors.highlight}
 
 [settings]
 screenchange-reload = true
@@ -414,9 +427,9 @@ screenchange-reload = true
 [module/cmus]
 type = custom/script
 
-format-underline = ${colors.highlight}
+#format-underline = ${colors.highlight}
 label-foreground = ${colors.background}
-label-background = ${colors.highlight}
+label-background = ${colors.eleven}
 exec = bash ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
 interval = 1
