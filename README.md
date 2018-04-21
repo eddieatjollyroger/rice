@@ -1,5 +1,5 @@
 # rice
 
-![pacman](https://i.imgur.com/mMkyKQo.png)
+![pacman](https://i.imgur.com/HeYg1ZX.png)
 
 
