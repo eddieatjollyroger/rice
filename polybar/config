@@ -26,6 +26,7 @@ eight = ${xrdb:color9:#222}
 nine = ${xrdb:color10:#222}
 ten = ${xrdb:color11:#222}
 eleven = ${xrdb:color12:#222}
+twelve = ${xrdb:color13:#222}
 highlight = ${xrdb:color4:#f00}
 urgent = #f00
 
@@ -68,7 +69,7 @@ tray-position = right
 tray-background = ${colors.fourth}
 #tray-transparent = true
 #tray-detached = true
-tray-offset-x = -4
+tray-offset-x = -6
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -336,7 +337,7 @@ type = internal/volume
 #format-volume = <bar-volume> <label-volume> <ramp-volume>
 format-volume = <label-volume> <ramp-volume>
 label-volume = VOL %percentage%%
-label-volume-background = ${colors.seventh}
+label-volume-background = ${colors.twelve}
 label-volume-foreground = ${colors.background}
 
 bar-volume-width = 10
