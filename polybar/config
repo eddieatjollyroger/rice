@@ -1,11 +1,20 @@
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
+
+
+██   ███   ██      ▄   ██▄   ████▄    ▄
+█ █  █  █  █ █      █  █  █  █   █     █
+█▄▄█ █ ▀ ▄ █▄▄█ ██   █ █   █ █   █ ██   █
+█  █ █  ▄▀ █  █ █ █  █ █  █  ▀████ █ █  █
+   █ ███      █ █  █ █ ███▀        █  █ █
+  █          █  █   ██             █   ██
+ ▀          ▀
+██   █    █          ▄  █ ████▄ █ ▄▄  ▄███▄
+█ █  █    █         █   █ █   █ █   █ █▀   ▀
+█▄▄█ █    █         ██▀▀█ █   █ █▀▀▀  ██▄▄
+█  █ ███▄ ███▄      █   █ ▀████ █     █▄   ▄▀
+   █     ▀    ▀        █         █    ▀███▀
+  █                   ▀           ▀
+ ▀
+
 
 [colors]
 
@@ -49,13 +58,13 @@ overline-color = #f00
 underline-size = 2
 #underline-color = ${colors.foreground-alt}
 
-padding-left = 3
-padding-right = 3
+padding-left = 2
+padding-right = 2
 border-bottom-size = 0
 border-top-size = 10
 
-module-margin-left = 0
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = scientifica:size=12;2
 font-1 = siji:pixelsize=10;2
@@ -68,7 +77,7 @@ modules-right = cmus cpu volume powermenu
 tray-position = right
 tray-background = ${colors.fourth}
 #tray-transparent = true
-#tray-detached = true
+#tray-detached = false
 tray-offset-x = -6
 
 scroll-up = i3wm-wsnext
@@ -85,6 +94,8 @@ scroll-down = i3wm-wsprev
 [module/xwindow]
 type = internal/xwindow
 label = %title%
+label-padding = 2
+label-margin = 1
 label-background = ${colors.third}
 label-foreground = ${colors.foreground}
 #format-underline = ${colors.highlight}
@@ -142,6 +153,7 @@ label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.highlight}
 #label-focused-underline = ${colors.highlight}
 label-focused-padding = 2
+label-focused-margin = 1
 
 ; Available tokens:
 ;   %name%
@@ -150,7 +162,9 @@ label-focused-padding = 2
 ; Default: %icon%  %name%
 label-unfocused = 
 label-unfocused-padding = 2
+label-unfocused-margin = 1
 label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.nine}
 
 ; Available tokens:
 ;   %name%
@@ -170,6 +184,7 @@ label-urgent = 
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-background = ${colors.background}
 label-urgent-padding = 2
+label-urgent-margin = 1
 
 [module/temperature]
 type = internal/temperature
@@ -286,6 +301,8 @@ format = <label>
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
 label = CPU %percentage%%
+label-padding = 2
+label-margin = 1
 label-foreground = ${colors.background}
 label-background = ${colors.nine}
 
@@ -337,6 +354,8 @@ type = internal/volume
 #format-volume = <bar-volume> <label-volume> <ramp-volume>
 format-volume = <label-volume> <ramp-volume>
 label-volume = VOL %percentage%%
+label-volume-padding = 2
+label-volume-margin = 1
 label-volume-background = ${colors.twelve}
 label-volume-foreground = ${colors.background}
 
@@ -352,8 +371,11 @@ bar-volume-empty-font = 6
 
 
 format-muted = <label-muted>
-label-muted =   muted   ░░░░░░░░░░
-label-muted-foreground = #66
+label-muted =   muted
+label-muted-background = ${colors.twelve}
+label-muted-foreground = ${colors.background}
+label-muted-padding = 2
+label-muted-margin = 1
 
 ramp-volume-0 =
 ramp-volume-1 =
@@ -395,6 +417,8 @@ type = custom/menu
 
 format-spacing = 1
 
+label-open-padding = 2
+label-open-margin = 0
 label-open = POWER
 label-open-foreground = ${colors.foreground}
 label-open-background = ${colors.eight}
@@ -429,6 +453,8 @@ screenchange-reload = true
 type = custom/script
 
 #format-underline = ${colors.highlight}
+label-padding = 2
+label-margin = 1
 label-foreground = ${colors.background}
 label-background = ${colors.eleven}
 exec = bash ~/.config/polybar/cmus.sh
