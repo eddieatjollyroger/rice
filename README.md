@@ -1,7 +1,7 @@
 # rice
 
 
--![pacman](https://i.imgur.com/HeYg1ZX.png)
+-![pacman](https://cubeupload.com/im/q0Dp8Q.png)
 -
 -![Lebowski](https://i.imgur.com/lXnELmH.jpg)
 -
