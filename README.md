@@ -1,5 +1,5 @@
 # rice
 
 
--![pacman](https://cubeupload.com/im/q0Dp8Q.png)
+-![pacman](https://i.imgur.com/aSNF22q.jpg)
 -![Lebowskiimproved](https://i.redd.it/uo6rgwbzo6u01.png)
