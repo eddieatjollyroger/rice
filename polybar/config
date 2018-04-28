@@ -69,7 +69,7 @@ font-2 = fontawesome:pixelsize=10;2
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = mpd cpu volume powermenu
+modules-right = mpd volume cpu powermenu
 
 #tray-position = right
 #tray-background = ${colors.fourth}
@@ -298,8 +298,8 @@ format = <label>
 ;   %percentage-core[1-9]% - load percentage for specific core
 label = CPU %percentage%%
 label-padding = 2
-label-margin-left = 1
-label-margin-right = 0.5
+label-margin-left = 0.5
+label-margin-right = 1
 label-foreground = ${colors.background}
 label-background = ${colors.fifth}
 
@@ -454,7 +454,7 @@ label-open-padding = 2
 label-open-margin = 0
 label-open = POWER
 label-open-foreground = ${colors.foreground}
-label-open-background = ${colors.thirteen}
+label-open-background = ${colors.seventh}
 label-close =  cancel
 label-close-foreground = ${colors.foreground-alt}
 label-close-background = ${colors.highlight}
