@@ -373,6 +373,7 @@ format-offline = <label-offline>
 label-offline = mpd is offline
 label-offline-foreground = ${colors.background}
 label-offline-background = ${colors.primary}
+label-offline-padding = 2
 
 label-song = "%artist% - %title%"
 label-song-maxlen = 120
