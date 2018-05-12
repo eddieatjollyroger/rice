@@ -41,7 +41,7 @@ width = 100%
 height = 27
 fixed-center = true
 top = true
-#monitor = HDMI-A-0
+monitor = HDMI-A-0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -63,7 +63,7 @@ border-top-size = 10
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = scientifica:size=11;2
+font-0 = scientifica:pixelsize=9;2
 font-1 = siji:pixelsize=10;2
 font-2 = fontawesome:pixelsize=10;2
 
@@ -72,10 +72,10 @@ modules-center = date
 modules-right = mpd volume cpu powermenu
 
 #tray-position = right
-#tray-background = ${colors.fourth}
-#tray-transparent = true
-#tray-detached = false
-#tray-offset-x = -6
+tray-background = ${colors.fourth}
+tray-transparent = true
+tray-detached = false
+tray-offset-x = -6
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -90,7 +90,7 @@ scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
-label = %title%
+label =  %title%
 label-padding = 2
 label-margin = 1
 label-background = ${colors.secondary}
@@ -296,7 +296,7 @@ format = <label>
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU %percentage%%
+label =  %percentage%%
 label-padding = 2
 label-margin-left = 0.5
 label-margin-right = 1
@@ -341,14 +341,14 @@ type = internal/volume
 
 #format-volume = <bar-volume> <label-volume> <ramp-volume>
 format-volume = <label-volume>
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-padding = 2
 label-volume-margin = 1
 label-volume-background = ${colors.fourth}
 label-volume-foreground = ${colors.background}
 
 format-muted = <label-muted>
-label-muted =   muted
+label-muted =  muted
 label-muted-background = ${colors.fourth}
 label-muted-foreground = ${colors.background}
 label-muted-padding = 2
@@ -367,15 +367,15 @@ port = 6600
 
 
 ;format-online = <label-song> <icon-prev> <icon-play> <icon-pause> <icon-next>
-format-online =<label-song> <icon-prev> <icon-play> <icon-pause> <icon-next>
+format-online = <label-song> <icon-prev> <icon-play> <icon-pause> <icon-next>
 format-offline = <label-offline>
 
-label-offline = mpd is offline
+label-offline =  mpd is offline
 label-offline-foreground = ${colors.background}
 label-offline-background = ${colors.primary}
 label-offline-padding = 2
 
-label-song = "%artist% - %title%"
+label-song =  %artist% - %title%
 label-song-maxlen = 120
 label-song-ellipsis = false
 label-song-padding = 2
@@ -383,24 +383,24 @@ label-song-margin = 0
 label-song-foreground = ${colors.background}
 label-song-background = ${colors.primary}
 
-icon-prev = 
+icon-prev = 
 icon-prev-foreground = ${colors.background}
 icon-prev-background = ${colors.primary}
 icon-prev-padding = 2
 icon-prev-margin = 0
 icon-seekb = <<
 icon-stop = o
-icon-pause = %{T4}
+icon-pause = %{T4}
 icon-pause-foreground = ${colors.background}
 icon-pause-background = ${colors.primary}
 icon-pause-padding = 2
 icon-pause-margin = 0
-icon-play = %{T4}
+icon-play = %{T4}
 icon-play-foreground = ${colors.background}
 icon-play-background = ${colors.primary}
 icon-play-padding = 2
 icon-play-margin = 0
-icon-next = %{T4}
+icon-next = %{T4}
 icon-next-foreground = ${colors.background}
 icon-next-background = ${colors.primary}
 icon-next-padding = 2
@@ -425,7 +425,7 @@ time = %H:%M:%S
 
 #format-prefix-foreground = ${colors.foreground}
 #format-underline = ${colors.highlight}
-label = %date% %time%
+label = %date% %time%
 label-padding = 2
 label-margin = 1
 label-foreground = ${colors.background}
@@ -452,13 +452,13 @@ format-spacing = 1
 
 label-open-padding = 2
 label-open-margin = 0
-label-open = POWER
+label-open =  pwr
 label-open-foreground = ${colors.foreground}
-label-open-background = ${colors.seventh}
+label-open-background = ${colors.thirteen}
 label-close =  cancel
 label-close-foreground = ${colors.foreground-alt}
 label-close-background = ${colors.highlight}
-label-separator = |
+label-separator = $
 label-separator-foreground = ${colors.foreground}
 label-separator-background = ${colors.highlight}
 
@@ -466,12 +466,14 @@ menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
+#label--background = ${colors.highlight}
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
 menu-1-1-exec = systemctl reboot; mode "default"
 
+label-menu-2-0-background = ${colors.highlight}
 menu-2-0 = power off
 menu-2-0-exec = systemctl poweroff; mode "default"
 menu-2-1 = cancel
